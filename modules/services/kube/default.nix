@@ -9,9 +9,9 @@ in
       enable = mkBoolOpt false "Whether or not to enable kube.";
       leader = mkBoolOpt false "Is the leader node";
       coredns = mkBoolOpt true "Enable CoreDNS";
-      kubeLeaderIP = mkOpt types.str "10.200.50.20";
-      kubeLeaderHostname = mkOpt types.str "kube.fruitcellar.us";
-      kubeLeaderPort = mkOpt types.int 6443;
+      kubeLeaderIP = mkOpt str "10.200.50.20" "IP Address of the Leader Node";
+      kubeLeaderHostname = mkOpt str "kube.fruitcellar.us" "Hostname of the Leader";
+      kubeLeaderPort = mkOpt int 6443 "Port of the Leader";
    };
 
    config = mkIf cfg.enable {
