@@ -16,7 +16,7 @@ in
 
    config = mkIf cfg.enable {
       # resolve master hostname
-      networking.extraHosts = "${kubeLeaderIP} ${kubeLeaderHostname}";
+      networking.extraHosts = "${cfg.kubeLeaderIP} ${cfg.kubeLeaderHostname}";
 
       # packages for administration tasks
       environment.systemPackages = with pkgs; [
