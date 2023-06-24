@@ -22,7 +22,7 @@
       # Snowfall Flake
       flake.url = "github:snowfallorg/flake";
       flake.inputs.nixpkgs.follows = "nixpkgs";
-   }
+   };
 
    outputs = inputs:
       let
@@ -33,9 +33,7 @@
       in
       lib.mkFlake {
          package-namespace = "fruitcellar";
-      }
 
-      overlays = with inputs; [ ];
-
-
+         overlays = with inputs; [ ];
+      };
 }
