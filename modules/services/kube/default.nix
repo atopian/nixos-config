@@ -27,11 +27,7 @@ in
       in
       {
          roles = ["node"];
-         
-         if cfg.leader {
-            roles = ["master"];
-         };
-
+         roles = if cfg.leader ["master"];
          masterAddress = kubeLeaderHostname;
          apiserverAddress = api;
          kubelet.kubeconfig.server = if !cfg.leader api;
