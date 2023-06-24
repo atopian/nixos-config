@@ -2,10 +2,10 @@
 
 with lib;
 with lib.internal;
-let cfg = config.fruitcellar.system.kube;
+let cfg = config.fruitcellar.services.kube;
 in
 {
-   options.fruitcellar.system.kube = with types; {
+   options.fruitcellar.services.kube = with types; {
       enable = mkBoolOpt false "Whether or not to enable kube.";
       leader = mkBoolOpt false "Is the leader node";
       coredns = mkBoolOpt true "Enable CoreDNS";
