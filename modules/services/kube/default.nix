@@ -30,13 +30,13 @@ in
       in
       {
          roles = ["node"] ++ (if cfg.leader then ["master"] else [ ]);
-         masterAddress = kubeLeaderHostname;
+         masterAddress = cfg.kubeLeaderHostname;
          apiserverAddress = api;
          kubelet.kubeconfig.server = if !cfg.leader then api else "";
          easyCerts = true;
          apiserver = mkIf cfg.leader {
-            securePort = kubeMasterAPIServerPort;
-            advertiseAddress = kubeMasterIP;
+            securePort = cfg.kubeLeaderPort;
+            advertiseAddress = cfg.kubeLeaderIP;
          };
 
          # use coredns
