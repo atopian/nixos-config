@@ -42,6 +42,7 @@
 		hostName = "riften";
 		domain = "fruitcellar.us";
 		dhcpcd.enable = false;
+		firewall.enable = false
 		usePredictableInterfaceNames = true;
 		interfaces.eno1.ipv4.addresses = [{
 			address = "10.200.69.66";
