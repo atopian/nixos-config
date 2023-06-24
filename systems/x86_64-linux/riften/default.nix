@@ -14,13 +14,9 @@ with lib.internal;
 			};
 		};
 
-		services = {
-			ssh = enabled;
-		};
-
-		apps = {
-			vim = enabled;
-		};
+		services.ssh = enabled;
+		apps.vim = enabled;
+		apps.screen = enabled;
 	};
 
 	system.stateVersion = "23.05";

@@ -7,7 +7,7 @@ let
 in
 {
    options.fruitcellar.apps.vim = {
-      enable = mkEnableOption "Attic";
+      enable = mkEnableOption "Vim";
    };
    
    config = mkIf cfg.enable {
