@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+
+with lib;
+with lib.internal;
 let cfg = config.fruitcellar.system.kube;
 in
 {
