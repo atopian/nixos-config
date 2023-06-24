@@ -8,6 +8,7 @@ with lib.internal;
 	fruitcellar = {
 		system = {
 			boot = enabled;
+			time = enabled;
 			zfs = {
 				enable = true;
 				auto-snapshot = enabled;
@@ -17,6 +18,10 @@ with lib.internal;
 		services.ssh = enabled;
 		apps.vim = enabled;
 		apps.screen = enabled;
+		services.kube = {
+			enable = true;
+			leader = true;
+		};
 	};
 
 	system.stateVersion = "23.05";

@@ -14,6 +14,7 @@
 		extraModulePackages = [ ];
 	};
 
+	# Core filesystems needed for boot, we'll use ZFS native for the rest
 	fileSystems = {
 		"/" = {
 			device = "rpool/riften/root";
@@ -46,7 +47,13 @@
 			address = "10.200.69.66";
 			prefixLength = 24;
 		}];
-
+		vlans = {
+			vlan50 = { id=50; interface="eno0"; };
+      };
+		interfaces.vlan50.ipv4.addresses = [{
+			address = "10.200.50.20";
+			prefixLength = 20;
+      }];
 
 		defaultGateway = "10.200.69.1";
 		nameservers = [ "10.200.69.1" ];
