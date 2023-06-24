@@ -20,7 +20,7 @@ with lib.internal;
 
 		apps = {
 			vim = enabled;
-		}
+		};
 	};
 
 	system.stateVersion = "23.05";
