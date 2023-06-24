@@ -7,7 +7,7 @@ in
 {
    options.fruitcellar.system.time = with types; {
       enable = mkBoolOpt false "Whether or not to enable time mgt.";
-      timeZone = mkOpt types.str "America/New_York";
+      timeZone = mkOpt str "America/New_York" "Time Zone to use";
    };
 
    config = mkIf cfg.enable {
