@@ -9,7 +9,7 @@ let
 	inherit (lib.types) listOf str;
 in
 {
-	options.plusultra.system.zfs = {
+	options.fruitcellar.system.zfs = {
 		enable = mkEnableOption "ZFS support";
 
 		pools = mkOpt (listOf str) [ "rpool" ] "The ZFS pools to manage.";
