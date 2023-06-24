@@ -21,7 +21,7 @@
 		};
 
 		"/boot" = {
-			device = "/dev/disk/by-label/boot";
+			device = "/dev/disk/by-label/EFI";
 			fsType = "vfat";
 		};
 
@@ -42,7 +42,7 @@
 		domain = "fruitcellar.us";
 		dhcpcd.enable = false;
 		usePredictableInterfaceNames = true;
-		interfaces.eth1.ipv4.addresses = [{
+		interfaces.eno1.ipv4.addresses = [{
 			address = "10.200.69.66";
 			prefixLength = 24;
 		}];

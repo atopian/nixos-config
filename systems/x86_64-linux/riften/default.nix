@@ -13,6 +13,14 @@ with lib.internal;
 				auto-snapshot = enabled;
 			};
 		};
+
+		services = {
+			ssh = enabled;
+		};
+
+		apps = {
+			vim = enabled;
+		}
 	};
 
 	system.stateVersion = "23.05";
