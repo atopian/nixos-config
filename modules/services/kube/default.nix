@@ -26,7 +26,12 @@ in
          api = "https://${kubeLeaderHostname}:${toString kubeLeaderPort}";
       in
       {
-         roles = if cfg.leader ["master", "node"] else ["node"];
+         roles = ["node"];
+         
+         if cfg.leader {
+            roles = ["master"];
+         };
+
          masterAddress = kubeLeaderHostname;
          apiserverAddress = api;
          kubelet.kubeconfig.server = if !cfg.leader api;
