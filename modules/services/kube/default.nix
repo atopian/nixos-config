@@ -26,7 +26,7 @@ in
       ];
 
       services.kubernetes = let
-         api = "https://${kubeLeaderHostname}:${toString kubeLeaderPort}";
+         api = "https://${cfg.kubeLeaderHostname}:${toString cfg.kubeLeaderPort}";
       in
       {
          roles = ["node"] ++ (if cfg.leader then ["master"] else [ ]);
