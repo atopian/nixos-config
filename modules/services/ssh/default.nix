@@ -13,11 +13,10 @@ in
    config = mkIf cfg.enable {
       services.openssh = {
          enable = true;
-      };
-
-      settings = {
-         PermitRootLogin = "yes";
-         PasswordAuthentication = true;
+         settings = {
+            PermitRootLogin = "yes";
+            PasswordAuthentication = true;
+         };
       };
    };
 }
