@@ -5,7 +5,7 @@ with lib.internal;
 let cfg = config.fruitcellar.system.boot;
 in
 {
-   options.plusultra.system.boot = with types; {
+   options.fruitcellar.system.boot = with types; {
       enable = mkBoolOpt false "Whether or not to enable booting.";
    };
 

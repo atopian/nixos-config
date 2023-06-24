@@ -1,5 +1,5 @@
 { 
-   description = "Fruitcellar NixOS Config"
+   description = "Fruitcellar NixOS Config";
 
    inputs = {
       # NixOS Packages (Stable - 23.05)
@@ -28,7 +28,7 @@
       let
          lib = inputs.snowfall-lib.mkLib {
             inherit inputs;
-            src ./.;
+            src = ./.;
          };
       in
       lib.mkFlake {
