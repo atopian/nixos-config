@@ -5,7 +5,7 @@ with lib.internal;
 let cfg = config.fruitcellar.system.kube;
 in
 {
-   options.fruitcellar.system.time = with types; {
+   options.fruitcellar.system.kube = with types; {
       enable = mkBoolOpt false "Whether or not to enable kube.";
       leader = mkBoolOpt false "Is the leader node";
       coredns = mkBoolOpt true "Enable CoreDNS";
