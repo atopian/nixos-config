@@ -49,7 +49,7 @@
 			prefixLength = 24;
 		}];
 		vlans = {
-			vlan50 = { id=50; interface="eno0"; };
+			vlan50 = { id=50; interface="eno1"; };
       };
 		interfaces.vlan50.ipv4.addresses = [{
 			address = "10.200.50.20";
