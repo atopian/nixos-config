@@ -28,6 +28,7 @@ in
          kubernetes
          k9s
          fluxcd
+         kubernetes-helm
       ];
 
       services.kubernetes = let
