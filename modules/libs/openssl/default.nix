@@ -6,7 +6,7 @@ let
    cfg = config.fruitcellar.libs.openssl;
 in
 {
-   options.fruitcellar.apps.screen = {
+   options.fruitcellar.libs.openssl = {
       enable = mkEnableOption "OpenSSL";
    };
    
