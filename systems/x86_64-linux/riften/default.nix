@@ -21,7 +21,7 @@ with lib.internal;
 		apps.vim = enabled;
 		libs.openssl = enabled;
 		services.kube = {
-			enable = true;
+			enable = false;
 			leader = true;
 		};
 	};

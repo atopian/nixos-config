@@ -14,6 +14,7 @@ in
       kubeLeaderPort = mkOpt int 6443 "Port of the Leader";
       easyCerts = mkBoolOpt true "Use easy certs";
       clusterCidr = mkOpt str "192.168.0.0/16" "CIDR Range for pods";
+      flannelIface = mkOpt str "eno1" "Default Interface for flannel";
    };
 
    config = mkIf cfg.enable {
@@ -44,6 +45,11 @@ in
 
          # use coredns
          addons.dns.enable = cfg.coredns;
+      };
+
+      services.flannel = {
+         iface = cfg.flannelIface;
+         network = cfg.clusterCidr;
       };
    };
 }
