@@ -30,7 +30,8 @@ in
          api = "https://${cfg.kubeLeaderHostname}:${toString cfg.kubeLeaderPort}";
       in
       {
-         roles = ["node"] ++ (if cfg.leader then ["master"] else [ ]);
+         #roles = ["node"] ++ (if cfg.leader then ["master"] else [ ]);
+         roles = ["master"];
          masterAddress = cfg.kubeLeaderHostname;
          apiserverAddress = api;
          kubelet.kubeconfig.server = if !cfg.leader then api else "";
