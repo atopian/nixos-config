@@ -33,7 +33,7 @@ in
          roles = ["node"] ++ (if cfg.leader then ["master"] else [ ]);
          masterAddress = cfg.kubeLeaderHostname;
          apiserverAddress = api;
-         kubelet.kubeconfig.server = if !cfg.leader then api else "";
+         kubelet.kubeconfig.server = api;
          easyCerts = cfg.easyCerts;
          apiserver = mkIf cfg.leader {
             securePort = cfg.kubeLeaderPort;
