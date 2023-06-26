@@ -26,6 +26,7 @@ in
          kompose
          kubectl
          kubernetes
+         k9s
       ];
 
       services.kubernetes = let
