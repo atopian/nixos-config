@@ -20,7 +20,7 @@ with lib.internal;
 		apps.screen = enabled;
 		libs.openssl = enabled;
 		services.kube = {
-			enable = false;
+			enable = true;
 			leader = true;
 		};
 	};
