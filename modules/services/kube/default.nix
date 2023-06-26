@@ -27,6 +27,7 @@ in
          kubectl
          kubernetes
          k9s
+         fluxcd
       ];
 
       services.kubernetes = let
