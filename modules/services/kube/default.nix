@@ -13,6 +13,7 @@ in
       kubeLeaderHostname = mkOpt str "kube.fruitcellar.us" "Hostname of the Leader";
       kubeLeaderPort = mkOpt int 6443 "Port of the Leader";
       easyCerts = mkBoolOpt true "Use easy certs";
+      clusterCidr = mkOpt str "192.168.0.0/16" "CIDR Range for pods"
    };
 
    config = mkIf cfg.enable {
@@ -35,6 +36,7 @@ in
          apiserverAddress = api;
          kubelet.kubeconfig.server = api;
          easyCerts = cfg.easyCerts;
+         clusterCidr = cfg.clusterCidr;
          apiserver = mkIf cfg.leader {
             securePort = cfg.kubeLeaderPort;
             advertiseAddress = cfg.kubeLeaderIP;
