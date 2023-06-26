@@ -21,8 +21,9 @@ with lib.internal;
 		apps.vim = enabled;
 		libs.openssl = enabled;
 		services.kube = {
-			enable = false;
+			enable = true;
 			leader = true;
+			flannelIface = "vlan50";
 		};
 	};
 
