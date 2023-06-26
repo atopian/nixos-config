@@ -1,5 +1,14 @@
 { 
    description = "Fruitcellar NixOS Config";
+   # For new nodes, do a basic/generic nixos-install, then nixos-enter.
+   #
+   # nixos-generate-config --root /mnt
+   # nixos-install --root /mnt
+   # nixos-enter
+   # mkdir -p ~/.config/nix
+   # echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+   # nix profile install github:snowfallorg/flake
+   # rm -fr /root/.cache/nix && flake switch github:atopian/nixos-config#HOSTNAME
 
    inputs = {
       # NixOS Packages (Stable - 23.05)
