@@ -6,25 +6,14 @@ with lib.internal;
 	imports = [ ./hardware.nix ];
 
 	fruitcellar = {
-		system = {
-			boot = enabled;
-			time = enabled;
-			zfs = {
-				enable = true;
-				auto-snapshot = enabled;
-			};
+		role.k8s = enabled;
+
+		system.zfs = {
+			enable = true;
+			auto-snapshot = enabled;
 		};
 
-		services.ssh = enabled;
-		apps.lsof = enabled;
-		apps.screen = enabled;
-		apps.vim = enabled;
-		libs.openssl = enabled;
-		services.kube = {
-			enable = true;
-			leader = true;
-			flannelIface = "vlan50";
-		};
+		services.kube.leader = true;
 	};
 
 	system.stateVersion = "23.05";
