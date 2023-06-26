@@ -16,8 +16,9 @@ with lib.internal;
 		};
 
 		services.ssh = enabled;
-		apps.vim = enabled;
+		apps.lsof = enabled;
 		apps.screen = enabled;
+		apps.vim = enabled;
 		libs.openssl = enabled;
 		services.kube = {
 			enable = true;
