@@ -1,0 +1,35 @@
+zpool create \
+    -o ashift=12 \
+    -o autotrim=on \
+    -R "${MNT}" \
+    -O acltype=posixacl \
+    -O canmount=off \
+    -O compression=zstd \
+    -O dnodesize=auto \
+    -O normalization=formD \
+    -O relatime=on \
+    -O xattr=sa \
+    -O mountpoint=/ \
+    rpool \
+    mirror \
+/dev/disk/by-id/ata-CT250BX100SSD1_1537F00C6059 /dev/disk/by-id/ata-Samsung_SSD_840_Series_S19MNSAD661932B
+
+
+---
+
+zfs create -o mountpoint=legacy     rpool/nixos/root
+mount -t zfs rpool/nixos/root "${MNT}"/
+zfs create -o mountpoint=legacy rpool/nixos/home
+mkdir "${MNT}"/home
+mount -t zfs rpool/nixos/home "${MNT}"/home
+zfs create -o mountpoint=legacy  rpool/nixos/var
+zfs create -o mountpoint=legacy rpool/nixos/var/lib
+zfs create -o mountpoint=legacy rpool/nixos/var/log
+mkdir "${MNT}"/boot
+mount -t vfat /dev/sda1 "${MNT}"/boot
+mkdir -p "${MNT}"/var/log
+mkdir -p "${MNT}"/var/lib
+mount -t zfs rpool/nixos/var/lib "${MNT}"/var/lib
+mount -t zfs rpool/nixos/var/log "${MNT}"/var/log
+zfs create -o mountpoint=legacy rpool/nixos/empty
+zfs snapshot rpool/nixos/empty@start
