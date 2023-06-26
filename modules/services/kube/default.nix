@@ -12,6 +12,7 @@ in
       kubeLeaderIP = mkOpt str "10.200.50.20" "IP Address of the Leader Node";
       kubeLeaderHostname = mkOpt str "kube.fruitcellar.us" "Hostname of the Leader";
       kubeLeaderPort = mkOpt int 6443 "Port of the Leader";
+      easyCerts = mkBoolOpt true "Use easy certs";
    };
 
    config = mkIf cfg.enable {
@@ -33,7 +34,7 @@ in
          masterAddress = cfg.kubeLeaderHostname;
          apiserverAddress = api;
          kubelet.kubeconfig.server = if !cfg.leader then api else "";
-         easyCerts = true;
+         easyCerts = cfg.easyCerts;
          apiserver = mkIf cfg.leader {
             securePort = cfg.kubeLeaderPort;
             advertiseAddress = cfg.kubeLeaderIP;

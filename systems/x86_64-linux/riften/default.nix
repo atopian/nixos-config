@@ -18,6 +18,7 @@ with lib.internal;
 		services.ssh = enabled;
 		apps.vim = enabled;
 		apps.screen = enabled;
+		libs.openssl = enabled;
 		services.kube = {
 			enable = true;
 			leader = true;
