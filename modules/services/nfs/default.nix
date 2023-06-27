@@ -6,7 +6,7 @@ let
    cfg = config.fruitcellar.services.nfs;
 in
 {
-   options.fruitcellar.services.ssh = with types; {
+   options.fruitcellar.services.nfs = with types; {
       enable = mkBoolOpt false "Enable NFS Server";
    };
 
