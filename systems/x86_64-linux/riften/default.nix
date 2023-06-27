@@ -14,6 +14,7 @@ with lib.internal;
 		};
 
 		services.kube.leader = true;
+		services.nfs.enable  = true;
 	};
 
 	system.stateVersion = "23.05";
