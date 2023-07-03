@@ -29,6 +29,7 @@ in
          k9s
          fluxcd
          kubernetes-helm
+         nfs-utils
       ];
 
       services.kubernetes = let
