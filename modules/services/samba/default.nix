@@ -9,8 +9,6 @@ in
    options.fruitcellar.services.samba = with types; {
       enable = mkBoolOpt false "Enable Samba Server";
       securityType = mkOpt str "user";
-      extraConfig = mkOpt str "";
-      shares = mkOpt str "";
    };
 
    config = mkIf cfg.enable {
