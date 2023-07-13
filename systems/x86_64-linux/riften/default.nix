@@ -15,6 +15,7 @@ with lib.internal;
 
 		services.kube.leader = true;
 		services.nfs.enable  = true;
+		services.samba.enable = true;
 	};
 
 	system.stateVersion = "23.05";
