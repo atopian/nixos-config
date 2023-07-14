@@ -41,6 +41,12 @@ in
                "read only" = "yes";
                "guest ok" = "yes";
             };
+            shared = {
+               path = "/shared";
+               browseable = "yes";
+               "read only" = "yes";
+               "guest ok" = "yes";
+            };
          };
       };
    };
