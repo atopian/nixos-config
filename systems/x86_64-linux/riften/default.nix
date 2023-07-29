@@ -17,7 +17,10 @@ with lib.internal;
 		services.nfs.enable  = true;
 		services.samba.enable = true;
 
-		apps.nmap.enable = true;
+		apps = {
+			nmap.enable = true;
+			tcpdump.enable = true;
+		};
 	};
 
 	system.stateVersion = "23.05";
