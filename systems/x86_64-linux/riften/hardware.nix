@@ -57,6 +57,6 @@
       }];
 
 		defaultGateway = "10.200.69.1";
-		nameservers = [ "10.200.50.50" ];
+		nameservers = [ "10.200.69.1" ];
 	};
 }
