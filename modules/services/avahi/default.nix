@@ -11,7 +11,7 @@ in
    };
 
    config = mkIf cfg.enable {
-      services.samba = {
+      services.avahi = {
          enable = true;
          reflector = cfg.reflector;
       };
