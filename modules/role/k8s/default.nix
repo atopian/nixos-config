@@ -14,6 +14,7 @@ in
       fruitcellar = {
          role.server = enabled;
          services.kube = enabled;
+         services.avahi = enabled;
       };
    };
 }
