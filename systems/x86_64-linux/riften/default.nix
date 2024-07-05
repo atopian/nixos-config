@@ -20,6 +20,7 @@ with lib.internal;
 		apps = {
 			nmap.enable = true;
 			tcpdump.enable = true;
+			python.enable = true;
 		};
 	};
 
