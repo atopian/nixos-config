@@ -11,6 +11,6 @@ in
    };
    
    config = mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [ python3 ];
+      environment.systemPackages = with pkgs; [ python3 python310Packages.pip ];
    };
 }
