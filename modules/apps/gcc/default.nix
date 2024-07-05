@@ -16,8 +16,6 @@ in
          cmake
          gnumake
          luajit
-         zeromq
-         libmysqlclient
       ];
    };
 }

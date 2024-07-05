@@ -22,6 +22,8 @@ with lib.internal;
 			tcpdump.enable = true;
 			python.enable = true;
 			gcc.enable = true;
+			mariadb.enable = true;
+			zeromq.enable = true;
 		};
 	};
 
