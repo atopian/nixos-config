@@ -11,6 +11,17 @@ in
    };
    
    config = mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [ python3 python310Packages.pip ];
+      environment.systemPackages = with pkgs; [ 
+         python3
+         python310Packages.pip
+         python310Packages.mariadb
+         python310Packages.gitpython
+         python310Packages.pylint
+         python310Packages.pyyaml
+         python310Packages.colorama
+         python310Packages.zmq
+         python310Packages.black
+         python310Packages.regex
+      ];
    };
 }
