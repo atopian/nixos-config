@@ -21,6 +21,7 @@ with lib.internal;
 			nmap.enable = true;
 			tcpdump.enable = true;
 			python.enable = true;
+			gcc.enable = true;
 		};
 	};
 
