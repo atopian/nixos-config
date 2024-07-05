@@ -19,6 +19,7 @@ in
          python310Packages.pylint
          python310Packages.pyyaml
          python310Packages.colorama
+         python310Packages.pyzmq
          python310Packages.black
          python310Packages.regex
       ];
